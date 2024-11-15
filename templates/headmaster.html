@@ -1,0 +1,29 @@
+{% include "header.html" %}
+
+
+<!--Header section ends here-->
+
+<!--Main section-->
+<!--main -->
+<div class="px-4 py-3 my-3 text-center" style="background-color: #1D3557;">
+    <h2 style="color: antiquewhite;">Principal’s Message</h2>
+    {% for principal in headmaster_msg %}
+    <div class="text-center mb-3 mt-3">
+        {% if principal.principal_image %}
+        <img src="{{ principal.principal_image.url }}" height="300px" width="300px" class="rounded" alt="...">
+        {% else %}
+        <p>No image available</p>
+        {% endif %}
+    </div>
+    <figure class="text-message" style="text-align: justify;">
+        <blockquote class="blockquote" style="color: aliceblue;">
+            <div class="president_msg_para">
+                {{ principal.principal_message|safe }}
+            </div>
+        </blockquote>
+    </figure>
+    {% endfor %}
+</div>
+<!--Footer content will appear here-->
+
+{% include "footer.html" %}

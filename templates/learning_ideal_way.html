@@ -1,0 +1,18 @@
+{% include "header.html" %}
+    <!--Header section ends here-->
+    <!--Main section-->
+    <!--main -->
+    <div class="px-4 py-3 my-3 text-center" style="background-color: #1D3557;">
+        <h2 style="color: aliceblue;">LEARNING, THE IDEAL WAY! </h2>
+        <figure class="text-message" style="text-align:justify;">
+            <blockquote class="blockquote" style="color: aliceblue;">
+                {% for l1 in learning_ideal %}
+                <div class="Learning">
+                    {{ l1.learning_Ideal_way | safe }}
+                </div>
+                {% endfor %}
+            </blockquote>
+        </figure>
+    </div>
+    <!--Footer content will appear here-->
+{% include "footer.html" %}

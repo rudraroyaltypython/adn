@@ -1,0 +1,83 @@
+{% include "header.html" %}
+
+
+<!--Header section ends here-->
+<!--Main section-->
+<form method="post" action="{% url 'alumni_reg_form_saved' %}">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Online Alumni Registration Form</h2>
+        <form id="registrationForm">
+            <!-- First Name, Father's/Husband's Name, Last Name -->
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First Name" name="firstName" required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Father's/Husband's Name" name="fatherName"
+                        required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lastName" required>
+                </div>
+            </div>
+            <!--Address-->
+            <div class="row-col-3 mb-2">
+                <div class="col">
+                    <input type="text" class="form-control"
+                        placeholder="Address-Buidling/House Name & Number (Optional)"
+                        name="Address-Buidling/House Name & Number">
+                </div>
+                <div class="col mt-2">
+                    <input type="text" class="form-control" placeholder="Taluka" name="Taluka" required>
+                </div>
+                <div class="col mt-2">
+                    <input type="text" class="form-control" placeholder="District" name="District" required>
+                </div>
+                <div class="col mt-2">
+                    <input type="text" class="form-control" placeholder="State" name="State" required>
+                </div>
+                <div class="col mt-2 mb-3">
+                    <input type="text" class="form-control" placeholder="Country" name="Country" required>
+                </div>
+            </div>
+
+
+            <!-- Mobile Number -->
+            <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="Mobile Number (WhatsApp)" name="mobileNumber"
+                    required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+            </div>
+    
+
+            <!-- Educational Qualification & Current Designation -->
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Passed out from class" name="passoutClass"
+                        required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Year of Passing Out" name="passingYear"
+                        required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Present Qualification" name="pQualification"
+                        required>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Present Designation" name="designation"
+                        required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <hr>
+</form>
+<!--Footer content will appear here-->
+{% include "footer.html" %}

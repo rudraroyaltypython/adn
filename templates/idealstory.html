@@ -1,0 +1,20 @@
+{% include "header.html" %}
+
+    <!--Header section ends here-->
+    <!--Main section-->
+    <!--main -->
+    <div class="px-4 py-2 my-2 text-center" style="background-color: #1D3557;">
+        <h2 style="color: aliceblue;">The Ideal Story</h2>
+        <figure class="text-message" style="text-align: justify">
+            <blockquote class="blockquote" style="color: aliceblue;">
+                {% for ideal in ideal_story %}
+                <div class="idealStory">
+                    {{ ideal.ideal_story | safe }}
+                </div>
+                {% endfor %}
+            </blockquote>
+        </figure>
+    </div>
+    <!--Footer content will appear here-->
+
+{% include "footer.html" %}

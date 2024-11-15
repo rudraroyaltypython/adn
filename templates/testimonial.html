@@ -1,0 +1,64 @@
+{% include "header.html" %}
+
+<body>
+    <div class="container mt-5">
+        <!-- Testimonial Section -->
+        <section class="text-center">
+            <h2 class="mb-4 fst-italic display-4 font-weight-bold " style="color: #1D3557;">Testimonials</h2>
+            <div class="row">
+                <!-- Testimonial Card 1 -->
+                {% for t in testimonial_data %}
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-lg bg-white rounded">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4 fst-italic">{{ t.name }}</h5>
+                            <p class="card-text" style="font-style: italic;font-weight: bold;">{{ t.user_description |
+                                safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Testimonial Card 2 -->
+            </div>
+        </section>
+        <!-- Feedback Section -->
+    </div>
+    <form method="POST" action="{% url 'testimonialSubmit' %}">
+        {% csrf_token %}
+        <div class="container-fluid mt-5" style="background-color: #1D3557;">
+            <h3 class="text-center mb-4 mt-3" style="color: aliceblue;">We Value Your Feedback</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" style="color: aliceblue;">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color: aliceblue;">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" style="color: aliceblue;">Your Feedback</label>
+                            <textarea class="form-control" id="message" rows="4"
+                                placeholder="Write your feedback here" name="feedback"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-4 justify-content-between">Submit
+                            Feedback</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+
+
+{% include "footer.html" %}

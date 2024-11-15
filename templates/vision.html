@@ -1,0 +1,51 @@
+{% include "header.html" %}
+
+<!--Header section ends here-->
+<!--main -->
+<section class="about_section layout_padding mt-3 mb-2">
+    <div class="container-fluid" style="background-color: #1D3557; color: aliceblue;">
+        <div class="row">
+            <hr>
+            <!-- Vision Section -->
+            <div class="col-12">
+                <h2 class="text-center" style="color: antiquewhite; padding: 20px 0;">Vision</h2>
+                <ul style="list-style-type: none; padding: 0;">
+                    {% for v in vision_1 %}
+                    <li style="margin-bottom: 10px;">
+                        {{ v.vision | safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <hr>
+            <!-- Mission Section -->
+            <div class="col-12">
+                <h2 class="text-center" style="color: antiquewhite; padding: 20px 0;">Mission</h2>
+                <ul style="list-style-type: none; padding: 0;">
+                    {% for m in mission_2 %}
+                    <li style="margin-bottom: 10px;">
+                        {{ m.mission | safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <hr>
+            <!-- Values Section -->
+            <div class="col-12">
+                <h2 class="text-center" style="color: antiquewhite; padding: 20px 0;">Values</h2>
+                <ul style="list-style-type: none; padding: 0;">
+                    {% for vl in values_3 %}
+                    <li style="margin-bottom: 10px;">
+                        {{ vl.values | safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+
+<!--Footer content will appear here-->
+
+{% include "footer.html" %}

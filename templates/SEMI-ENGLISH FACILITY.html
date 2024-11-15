@@ -1,0 +1,43 @@
+{% include "header.html" %}
+
+<!-- Blog Header Section -->
+<header class="text-center py-5" style="background-color: #1D3557;">
+    <div class="container" style="color: aliceblue;">
+        {% for s in semi_english %}
+        <h1 class="display-4">{{ s.main_title }}</h1>
+        <p class="lead">{{ s.sub_title }}</p>
+        {% endfor %}
+    </div>
+</header>
+
+<!-- Main Content Section -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Blog Post Text -->
+        {% for main in semi_english %}
+        <div class="col-lg-8 border mt-3" style="background-color: #1D3557; color: aliceblue;">
+            <p style="margin-left: 5%; margin-top: 3%;">{{ main.text_content | safe }}</p>
+        </div>
+        {% endfor %}
+
+        <!-- Image Section -->
+        <div class="col-lg-4 border rounded mt-3" style="background-color: #1D3557;">
+            <div class="mb-4" style="margin-top: 3%;">
+                {% for main in semi_english %}
+                    {% if main.image1 %}
+                        <img src="{{ main.image1.url }}" class="img-fluid mb-3 rounded" alt="Image 1">
+                    {% endif %}
+                    {% if main.image2 %}
+                        <img src="{{ main.image2.url }}" class="img-fluid mb-3 rounded" alt="Image 2">
+                    {% endif %}
+                    {% if main.image3 %}
+                        <img src="{{ main.image3.url }}" class="img-fluid mb-3 rounded" alt="Image 3">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer content will appear here -->
+{% include "footer.html" %}

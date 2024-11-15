@@ -1,0 +1,52 @@
+{% include "header.html" %}
+
+<!--Header section ends here-->
+<!--main -->
+<main class="container-fluid" style="background-color: #1D3557;margin-top: 1%;margin-bottom: 1%;">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis" style="background-color: #1D3557;">
+        <div class="col-lg-12 px-0">
+            <h1 class="display-8" style="color: aliceblue;text-align: center;">SCHOOL CURRICULUM</h1>
+            {% for ss in school_curri %}
+            <div class="lead my-3" style="text-align: justify;color: aliceblue;">
+                {{ ss.school_curriculum_description | safe}}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mb-2">
+        {% for d in divi %}
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static" style="color: aliceblue;">
+                    <h3 class="mb-0">{{ d.std }}</h3>
+                    <strong class="d-inline-block mb-2 text-light-emphasis">{{ d.group }}</strong>
+                    <div class="card-text mb-auto">
+                        {{d.divisions_description | safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <hr>
+    <!--
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="btn btn-primary" href="docs/DEPARTMENT.pdf" role="button">Department</a>
+                </div>
+            </div>
+    </section>
+    -->
+    <hr>
+    <hr>
+    <br>
+
+    </div>
+
+    </div>
+</main>
+<!--Footer content will appear here-->
+{% include "footer.html" %}

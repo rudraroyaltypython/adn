@@ -1,0 +1,28 @@
+{% include "header.html" %}
+
+
+<!--Header section ends here-->
+
+<hr>
+<!--Main section-->
+<!--main --><!--main -->
+
+<!--Footer content will appear here-->
+{% for document in admission_form %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h3 class="mb-3">Download Admission Form</h3>
+            <p>Click the button below to download the admission form.</p>
+            <a href="{{ document.pdf.url }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-download"></i> Download Admission Form
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+{% include "footer.html" %}

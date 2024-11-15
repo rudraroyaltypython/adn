@@ -1,0 +1,92 @@
+{% include "header.html" %}
+
+    <!--Header section ends here-->
+    <!--Main section-->
+    <!--main -->
+    <section class="about_section layout_padding mt-3">
+        <div class="container-fluid" style="background-color: #1D3557;color: aliceblue;">
+            <div class="row text-center">
+                <h3><br><br>MANANGING COMMITTEE UPTO 1994</h3>
+                <table class="table" style="color: aliceblue;">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Managing Committee Members upto 1994</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in management_c_data %}
+                        <tr>
+                            <th scope="row">{{ m.no }}</th>
+                            <td>{{ m.committee_members_upto_1994 }} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <div class="row">
+                <h3>MANAGING COMMITTEE FROM 2016 TO 2020 </h3>
+
+                <table class="table" style="color: aliceblue;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Names</th>
+                            <th scope="col">Designation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m2 in management_c_data_2 %}
+                        <tr>
+                            <th scope="row">{{ m2.names }}</th>
+                            <td>{{ m2.designation }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!--MANAGING COMMITTEE FROM 2020 ONWARDS-->
+            <div class="row">
+                <h3>MANAGING COMMITTEE FROM 2020 ONWARDS</h3>
+                <table class="table" style="color: antiquewhite;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Names</th>
+                            <th scope="col">Designation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m3 in management_c_data_3 %}
+                        <tr>
+                            <th scope="row">{{ m3.names }}</th>
+                            <td>{{ m3.designation }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            <div class="row">
+                <h3>SCHOOL COMMITTEE </h3>
+                <table class="table" style="color: antiquewhite;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Names</th>
+                            <th scope="col">Designation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m4 in management_c_data_4 %}
+                        <tr>
+                            <th scope="row">{{ m4.names }}</th>
+                            <td>{{ m4.designation }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+   <!--Footer content will appear here-->
+
+{% include "footer.html" %}

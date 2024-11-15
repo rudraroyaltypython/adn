@@ -1,0 +1,57 @@
+
+.backgr {
+  /* Set the background image */
+  background-image: url('/images/pencil.jpg');
+  /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+
+  /* Specify the size and behavior of the background image */
+  background-size: cover;
+  /* Cover the entire container */
+  background-position: center;
+  /* Center the background image */
+
+  /* Define the size of the container */
+  width: 50%;
+  height: 1000px;
+  /* Adjust the height as needed */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #eaeaea;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}

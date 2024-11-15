@@ -1,0 +1,32 @@
+{% include "header.html" %}
+<!--Header section ends here-->
+    <!--Header section ends here-->
+    <!--Main section-->
+    <!--main -->
+    <section class="about_section layout_padding mt-3">
+        <div class="container-fluid" style="background-color: #1D3557;color: aliceblue;">
+            <div class="row">
+                <h3 style="text-align: center;">OUR HISTORY AT A GLANCE </h3>
+
+                <table class="table" style="color: antiquewhite;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Year</th>
+                            <th scope="col">History</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for h in History_data_dic %}
+                        <tr>
+                            <th scope="row">{{ h.year }}</th>
+                            <td>{{ h.history }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <!--Footer content will appear here-->
+{% include "footer.html" %}

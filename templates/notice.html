@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">School Notice Board</h1>
+
+    <!-- Notice Section -->
+    <div class="list-group">
+        {% for notice in notice %}
+        <div class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1 text-center">{{ notice.main_title }}</h5>
+                <small class="text-muted">{{ notice.date }}</small>
+            </div>
+            <p class="mb-1">{{ notice.text_content |safe }}</p>
+        </div>
+        {% empty %}
+        <div class="alert alert-info text-center" role="alert">
+            No notices available at the moment.
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% include "footer.html" %}

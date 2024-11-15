@@ -1,0 +1,19 @@
+{% include "header.html" %}
+    <!--Header section ends here-->
+    <!--Main section-->
+    <!--main --><!--main -->
+    <div class="px-4 py-5 my-5 text-center" style="background-color: #1D3557;">
+        {% for process in support_ideal %}
+        <h2 style="color: aliceblue;">{{ process.main_title }}</h2>
+        {% endfor %}
+        <figure class="text-message" style="text-align:justify;">
+            {% for p in support_ideal %}
+            <blockquote class="blockquote" style="color: aliceblue;">
+                {{ p.text_content | safe }}
+            </blockquote>
+            {% endfor %}
+        </figure>
+    </div>
+    
+
+ {% include "footer.html" %}

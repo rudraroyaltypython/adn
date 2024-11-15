@@ -1,0 +1,33 @@
+{% include "header.html" %}
+
+
+<!--Header section ends here-->
+<!--main -->
+<section class="about_section layout_padding mt-2">
+    <div class="container-fluid" style="background-color: #1D3557;">
+        <div class="row" style="color: aliceblue;">
+            <h1 style="text-align: center;"><br><br>School Profile at glance</h1>
+            <h2 style="text-align: center;">AZIZA DAWOOD NAIK HIGH SCHOOL, RATNAGIRI</h2>
+            <h3 style="text-align: center;">In Search of Excellence in Education…</h3>
+
+            <p>Aziza Dawood Naik High School is a Private Aided and Co-Education institution that serves students
+                from Grade V to Grade X in Ratnagiri, Maharashtra State, India. The school is affiliated with the
+                State Board.</p>
+
+
+            <table class="table" style="color: aliceblue;">
+                <tbody>
+                    {% for profile in school_profile %}
+                    <tr>
+                        <th scope="row">{{profile.school_profile}}</th>
+                        <td>{{ profile.details }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!--Footer content will appear here-->
+
+{% include "footer.html" %}

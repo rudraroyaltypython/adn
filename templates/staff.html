@@ -1,0 +1,53 @@
+{% include "header.html" %}
+    <!--Header section ends here-->
+    <!-- Teaching staff and non-teaching staff names section -->
+
+    <section class="about_section layout_padding mt-3 mb-2">
+        <div class="container-fluid" style="background-color: #1D3557;">
+            <div class="row">
+                <h1 style="color:aliceblue;text-align: center;">Teaching Staff</h1>
+
+                <p style="color:aliceblue">We highly regard the most precious resource – Our Teachers.
+                    At IDEAL, we hold our teachers in high esteem. They not only impart the curriculum but also actively
+                    engage in co-curricular education, fostering a passion for learning and cultivating critical
+                    thinking skills.
+                </p>
+
+
+                <table class="table" style="color:aliceblue">
+                    <tbody>
+                        {% for t in teaching %}
+                        <tr>
+                            <th scope="row">{{ t.name }}</th>
+                            <td>{{ t.designation }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <h1 style="color:aliceblue;text-align: center;">Non-Teaching Staff</h1>
+
+                <p style="color: aliceblue;">We value the most helpful resource – Non-Teaching Staff
+                    Diligent clerical office staff tirelessly contributes, while supporting non-teaching staff enhances
+                    the school premises, fostering a clean and green environment for an optimal learning experience.
+
+                </p>
+
+
+                <table class="table" style="color:aliceblue">
+                    <tbody>
+                        {% for n in Nteaching %}
+                        <tr>
+                            <th scope="row">{{n.name}}</th>
+                            <td>{{n.designation}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer content will appear here-->
+{% include "footer.html" %}
