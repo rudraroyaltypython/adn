@@ -54,6 +54,7 @@ from admission_form.models import AdmissionForm
 from testimonial.models import Testimonial
 from testimonial.models import TestimonialData
 from computer_lab.models import ComputerLab
+from department.models import Department
 
 def homePage(request):
     home_slider_data=HomeSlider.objects.all()
@@ -182,10 +183,10 @@ def schoolCurriculum(request):
     }
     return render(request,'school_curriculum.html',school_curri_data_render)
 
-def department_view(request):
-    documents = Document.objects.all()
-    return render(request, 'department.html', {'documents': documents})
 
+def department_staff_list(request):
+    departments = Department.objects.prefetch_related('staff').all()
+    return render(request, 'department_staff_list.html', {'departments': departments})
 
 
 

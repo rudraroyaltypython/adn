@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+
+<div class="container mt-5">
+    {% for department in departments %}
+    <div class="card mb-3" style="background-color: #1D3557;">
+        <div class="card-header text-center" style="background-color: #1D3557;color: aliceblue;">
+            <h2 class="mb-0">{{ department.name }}</h2>
+            {% if department.tagline %}
+            <p class="fst-italic" style="color: aliceblue;">{{ department.tagline }}</p>
+            {% endif %}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                {% for staff in department.staff.all %}
+                <li class="list-group-item text-center" style="color: #1D3557;">
+                    <strong>{{ staff.name }}</strong> - {{ staff.designation }}
+                    {% if staff.achievement %}
+                    <p class="text-muted mb-0">Achievement: {{ staff.achievement }}</p>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <p class="text-muted">No staff members in this department yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!--Footer content will appear here-->
+{% include "footer.html" %}

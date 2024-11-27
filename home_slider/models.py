@@ -12,4 +12,4 @@ class HomeSlider(models.Model):
 class HomeBlog(models.Model):
     main_title=models.CharField(max_length=100)
     text_content=HTMLField()
-    image1 = models.ImageField(upload_to='HomeBlog/', blank=True, null=True)  # Make image optional
+    image1 = models.ImageField(upload_to='HomeBlog/', blank=True, null=True)  # Make image optional   

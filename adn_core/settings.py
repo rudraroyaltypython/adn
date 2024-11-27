@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'admission_form',
     'testimonial',
     'computer_lab',
+    'department',
 ]
 
 MIDDLEWARE = [

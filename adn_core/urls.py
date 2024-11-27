@@ -65,7 +65,7 @@ urlpatterns = [
     path('contactussubmit/',views.contactus_data,name='contactussubmit'),
     path('notice/',views.notice),
     path('subscribe-newsletter/',views.sub_newsletter),
-    path('department/', views.department_view, name='department'),
+    path('department/', views.department_staff_list, name='department'),
     path('admissionForm/', views.admission_form, name='admissionForm'),
     path('testimonial/',views.testimonial),
     path('testimonialSubmit/',views.testimonial_data,name='testimonialSubmit')

@@ -4,10 +4,10 @@ from staff.models import NonTechingStaff
 
 
 class TeachingStaffAdmin(admin.ModelAdmin):
-    list_display=['name','designation']
+    list_display=['name','designation','achievement','photo']
 
 class NonTeachingStaffAdmin(admin.ModelAdmin):
-    list_display=['name','designation']
+    list_display=['name','designation','achievement','photo']
 
 
 admin.site.register(TeachingStaff,TeachingStaffAdmin)

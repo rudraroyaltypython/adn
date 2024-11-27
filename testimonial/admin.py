@@ -4,7 +4,7 @@ from testimonial.models import TestimonialData
 
 
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display=['main_title','name','user_description']
+    list_display=['main_title','name','user_description','photo']
 
 class TestimonialDataAdmin(admin.ModelAdmin):
     list_display=['name','email','feedback']

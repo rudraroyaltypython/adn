@@ -21,27 +21,29 @@
             aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
+        {% for img in home_slider %}
         <div class="carousel-item active">
-            {% for img in home_slider %}
+            {% if img.image1 %}
             <img src="{{ img.image1.url }}" class="d-block w-100" alt="Classroom">
-            {% endfor %}
+            {% endif %}
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
         <div class="carousel-item">
-            {% for img in home_slider %}
+            {% if img.image2 %}
             <img src="{{ img.image2.url }}" class="d-block w-100" alt="Computer Lab">
-            {% endfor %}
+            {% endif %}
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
         <div class="carousel-item">
-            {% for img in home_slider %}
+            {% if img.image3 %}
             <img src="{{ img.image3.url }}" class="d-block w-100" alt="Computer Lab">
-            {% endfor %}
+            {% endif %}
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
+        {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -75,7 +77,7 @@
                 <div class="col-lg-6 px-0" style="color: aliceblue;">
                     {% for blog in HomeBlog %}
                     <h1 class="display-4 fst-italic">{{ blog.main_title }}</h1>
-                    <p class="lead my-3">{{ blog.text_content }}</p>
+                    <p class="lead my-3">{{ blog.text_content | safe }}</p>
                     {% endfor %}
                 </div>
             </div>
