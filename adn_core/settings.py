@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'schoolprofile',
     'vision',
     'staff',
-    'committees_PTA_SMC',
     'learning_ideal_way',
     'school_curriculum',
     'semi_english',
@@ -83,6 +82,7 @@ INSTALLED_APPS = [
     'testimonial',
     'computer_lab',
     'department',
+    'committees_members',
 ]
 
 MIDDLEWARE = [

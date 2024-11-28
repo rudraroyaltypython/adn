@@ -33,7 +33,7 @@ urlpatterns = [
     path('profile/',views.profile),
     path('vision/',views.vision),
     path('faculty/',views.faculty),
-    path('committee/',views.committee),
+    path('committee/',views.committee,name='committee'),
     path('learning/',views.learning),
     path('schoolCurriculum/',views.schoolCurriculum),
     path('semi_english/',views.semi_english),

@@ -1,47 +1,32 @@
 {% include "header.html" %}
 
-{% for cc in comm %}
-<div class="px-4 py-3 my-3 text-center" style="background-color: #1D3557;">
-    <h2 style="color: antiquewhite;">{{ cc.title }}</h2>
-    <figure class="text-message" style="text-align: justify;">
-        <blockquote class="blockquote" style="color: aliceblue;">
-            <div class="president_msg_para">
-                <p>{{ cc.comm_description | safe }}</p>
-            </div>
-        </blockquote>
-    </figure>
+
+<div class="container mt-5">
+    {% for department in com %}
+    <div class="card mb-3" style="background-color: #1D3557;">
+        <div class="card-header text-center" style="background-color: #1D3557;color: aliceblue;">
+            <h2 class="mb-0">{{ department.name }}</h2>
+            {% if department.tagline %}
+            <p class="fst-italic" style="color: aliceblue;">{{ department.tagline }}</p>
+            {% endif %}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                {% for staff in department.staff.all %}
+                <li class="list-group-item text-center" style="color: #1D3557;">
+                    <strong>{{ staff.name }}</strong> - {{ staff.designation }}
+                    {% if staff.achievement %}
+                    <p class="text-muted mb-0">Achievement: {{ staff.achievement }}</p>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <p class="text" style="color: aliceblue;">No staff members in this department yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
-{% for p in pta %}
-<div class="px-4 py-3 my-3 text-center" style="background-color: #1D3557;">
-    <h2 style="color: antiquewhite;">{{ p.title }}</h2>
-    <figure class="text-message" style="text-align: justify;">
-        <blockquote class="blockquote" style="color: aliceblue;">
-            <div class="president_msg_para">
-                <p>{{ p.PTA_description | safe }}</p>
-            </div>
-        </blockquote>
-    </figure>
-</div>
-{% endfor %}
-
-{% for o in others %}
-<div class="px-4 py-3 my-3 text-center" style="background-color: #1D3557;">
-    <h2 style="color: antiquewhite;">{{ o.title }}</h2>
-    <figure class="text-message" style="text-align: justify;">
-        <blockquote class="blockquote" style="color: aliceblue;">
-            <div class="president_msg_para">
-                <p>{{ o.others_description | safe }}</p>
-            </div>
-        </blockquote>
-    </figure>
-</div>
-{% endfor %}
-
-
-
-
-
-
+<!--Footer content will appear here-->
 {% include "footer.html" %}

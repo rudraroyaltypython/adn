@@ -1,4 +1,4 @@
-from django.db import models
+'''from django.db import models
 from tinymce.models import HTMLField
 
 class Committees(models.Model):
@@ -11,6 +11,6 @@ class Pta(models.Model):
 
 class Others(models.Model):
     title=models.CharField(max_length=100)
-    others_description=HTMLField()
+    others_description=HTMLField()'''
 
 # Create your models here.

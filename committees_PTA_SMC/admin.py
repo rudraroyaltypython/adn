@@ -1,4 +1,4 @@
-from django.contrib import admin
+'''from django.contrib import admin
 from committees_PTA_SMC.models import Committees
 from committees_PTA_SMC.models import Pta
 from committees_PTA_SMC.models import Others
@@ -15,6 +15,6 @@ class OthersAdmin(admin.ModelAdmin):
 
 admin.site.register(Committees,CommitteesAdmin)
 admin.site.register(Pta,PtaAdmin)
-admin.site.register(Others)
+admin.site.register(Others)'''
 
 # Register your models here.

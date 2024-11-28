@@ -14,10 +14,7 @@ from vision.models import Vision
 from vision.models import Mission
 from vision.models import Values
 from staff.models import TeachingStaff
-from staff.models import NonTechingStaff
-from committees_PTA_SMC.models import Committees
-from committees_PTA_SMC.models import Pta
-from committees_PTA_SMC.models import Others 
+from staff.models import NonTechingStaff 
 from learning_ideal_way.models import Learning_Ideal_way
 from school_curriculum.models import SchoolCurri
 from school_curriculum.models import Divisions
@@ -55,6 +52,7 @@ from testimonial.models import Testimonial
 from testimonial.models import TestimonialData
 from computer_lab.models import ComputerLab
 from department.models import Department
+from committees_members.models import Committee 
 
 def homePage(request):
     home_slider_data=HomeSlider.objects.all()
@@ -153,17 +151,14 @@ def faculty(request):
     }
     return render(request,'staff.html',staff_data_render)
 
-def committee(request):
-    committees_data=Committees.objects.all()
-    pta_data=Pta.objects.all()
-    others_data=Others.objects.all()
 
-    committee_data_render={
-        'comm': committees_data,
-        'pta' : pta_data,
-        'others' : others_data 
-    }
-    return render(request,'comm_PTA.html',committee_data_render)
+
+def committee(request):
+    com = Committee.objects.prefetch_related('staff').all()
+    return render(request, 'comm_PTA.html', {'com': com})
+
+
+
 
 def learning(request):
     learning_ideal_way=Learning_Ideal_way.objects.all()
@@ -383,6 +378,8 @@ def alumni_committee(request):
         'alumni_committee':alumni_committee_data
     }
     return render(request,'alumni_committee.html',alumni_committee_data_render)
+
+
 
 def alumni_meet(request):
     alumni_meet_data=AlumniMeetEvents.objects.all()
