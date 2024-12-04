@@ -7,4 +7,4 @@ class DaysCelebration(models.Model):
     text_content=HTMLField()
     image1 = models.ImageField(upload_to='DaysCelebration/', blank=True, null=True)  # Make image optional
     image2 = models.ImageField(upload_to='DaysCelebration/', blank=True, null=True)  # Make image optional
-    image3 = models.ImageField(upload_to='DaysCelebration/', blank=True, null=True)  # Make image optional
+    image3 = models.ImageField(upload_to='DaysCelebration/', blank=True, null=True)  # Make image optional 

@@ -1,19 +1,20 @@
 from django.db import models
 
-class ManagementCommittee(models.Model):
-    no=models.CharField(max_length=50)
-    committee_members_upto_1994=models.CharField(max_length=100)
+class GoverningBody(models.Model):
+    name = models.CharField(max_length=100, unique=True)  # Department name (e.g., Urdu, English, Maths)  # Timestamp for record creation
+    tagline = models.CharField(max_length=255, blank=True, null=True) 
+    
+    def __str__(self):
+        return self.name
+ 
+ 
 
-class Management_c_2016_2020(models.Model):
-    names=models.CharField(max_length=100)
-    designation=models.CharField(max_length=50)
+class CommitteeMembers(models.Model):
+    name = models.CharField(max_length=100)  # Staff member's name
+    designation = models.CharField(max_length=100)  # Staff designation (e.g., Professor, Assistant Teacher)
+    department = models.ForeignKey(GoverningBody, on_delete=models.CASCADE, related_name='staff')  # Relates staff to a department
+    achievement = models.TextField(null=True, blank=True)  # Optional achievements
 
-class Management_c_2020_onwards(models.Model):
-    names=models.CharField(max_length=100)
-    designation=models.CharField(max_length=50)
-
-class SchoolCommittee(models.Model):
-    names=models.CharField(max_length=100)
-    designation=models.CharField(max_length=50)
-
-# Create your models here.
+    def __str__(self):
+        return f"{self.name} ({self.designation})"
+  

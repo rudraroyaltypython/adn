@@ -12,4 +12,4 @@ class StaffAdmin(admin.ModelAdmin):
     list_display = ('name', 'designation', 'department')
     list_filter = ('department',)
     search_fields = ('name', 'designation')
- 
+  

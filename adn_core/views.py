@@ -3,10 +3,7 @@ from django.shortcuts import render
 from president_message.models import President
 from secretary_message.models import Secretary
 from history.models import History
-from management_committee.models import ManagementCommittee
-from management_committee.models import Management_c_2016_2020
-from management_committee.models import Management_c_2020_onwards
-from management_committee.models import SchoolCommittee
+from management_committee.models import GoverningBody,CommitteeMembers
 from ideal_story.models import IdealStory
 from headmaster_message.models import Headmaster
 from schoolprofile.models import SchoolProfile
@@ -53,6 +50,7 @@ from testimonial.models import TestimonialData
 from computer_lab.models import ComputerLab
 from department.models import Department
 from committees_members.models import Committee 
+from school_committee_chairperson_message.models import ShoolCommitteeChairpersonMessage
 
 def homePage(request):
     home_slider_data=HomeSlider.objects.all()
@@ -82,6 +80,13 @@ def secretary(request):
 
     return render(request,'secretary.html',sec_msg_data)
 
+def shool_sec_com_chairperson_msg(request):
+    school_sec_com_chairperson_msg_data=ShoolCommitteeChairpersonMessage.objects.all()
+    school_sec_com_chairperson_msg_data_render={
+        'school_sec_com_chairperson_msg_data':school_sec_com_chairperson_msg_data
+    }
+    return render(request,'sccm.html',school_sec_com_chairperson_msg_data_render) 
+
 def history(request):
     history_data=History.objects.all()
 
@@ -90,20 +95,12 @@ def history(request):
     }
     return render(request,'history.html',his_data)
 
-def management(request):
-    management_c=ManagementCommittee.objects.all()
-    management_c_2016_2020=Management_c_2016_2020.objects.all()
-    management_c_2020_onwards=Management_c_2020_onwards.objects.all()
-    schoolCommittee=SchoolCommittee.objects.all()
+def governing_body(request):
+    governing_body_data = GoverningBody.objects.prefetch_related('staff').all()
 
-    management_c_data={
-        'management_c_data':management_c,
-        'management_c_data_2':management_c_2016_2020,
-        'management_c_data_3':management_c_2020_onwards,
-        'management_c_data_4':schoolCommittee,
+    return render(request,'management_committee.html',{'comittee_member':governing_body_data})
 
-    }
-    return render(request,'management_committee.html',management_c_data)
+
 
 def idealstory(request):
     idealstory_data=IdealStory.objects.all()
@@ -264,7 +261,7 @@ def days_celebration(request):
     days_celebration_data_render={
         'days_celebration':days_celebration_data
     }
-    return render(request,'days_celeb.html',days_celebration_data_render)
+    return render(request,'days_celeb.html',days_celebration_data_render) 
 
 def committee_meetings(request):
     committee_meetings_data=CommitteeMeetings.objects.all()
